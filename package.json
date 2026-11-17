@@ -1,0 +1,32 @@
+{
+  "name": "silver-lamp",
+  "version": "1.0.0",
+  "description": "<img src=\"https://octodex.github.com/images/Professortocat_v2.png\" align=\"right\" height=\"200px\" />",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "ask": "tsx src/openrouter.ts",
+    "typecheck": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrenmcmanus04-beep/silver-lamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrenmcmanus04-beep/silver-lamp/issues"
+  },
+  "homepage": "https://github.com/darrenmcmanus04-beep/silver-lamp#readme",
+  "dependencies": {
+    "@openrouter/sdk": "^1.5.110"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "type": "module"
+}

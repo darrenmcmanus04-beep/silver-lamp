@@ -35,3 +35,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Node / secrets #
+##################
+node_modules/
+.env
+.env.*
+!.env.example
