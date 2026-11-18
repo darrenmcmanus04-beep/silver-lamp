@@ -15,6 +15,8 @@ import {
 } from "@openrouter/sdk/models/errors";
 
 const DEFAULT_MODEL = "anthropic/claude-opus-5.5";
+// Cap reply length so small credit balances can afford the request.
+const MAX_TOKENS = Number(process.env.OPENROUTER_MAX_TOKENS ?? 2000);
 
 function getApiKey(): string {
   const key = process.env.OPENROUTER_API_KEY?.trim();
@@ -53,6 +55,7 @@ export async function ask(
       chatRequest: {
         model,
         messages: [{ role: "user", content: prompt }],
+        maxTokens: MAX_TOKENS,
       },
     },
   );
@@ -71,7 +74,7 @@ function describeError(err: unknown): string {
   if (err instanceof OpenRouterError) {
     const hints: Record<number, string> = {
       401: "Invalid or missing API key — check OPENROUTER_API_KEY.",
-      402: "Insufficient credits — add credits at https://openrouter.ai/settings/credits.",
+      402: "Not enough credits — add credits at https://openrouter.ai/settings/credits or lower OPENROUTER_MAX_TOKENS.",
       404: "Model not found — check the slug at https://openrouter.ai/models.",
       429: "Rate limited — wait and retry.",
     };

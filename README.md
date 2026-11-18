@@ -24,4 +24,4 @@ A single chat completion through [OpenRouter](https://openrouter.ai) using the o
 2. `npm install`
 3. `npm run ask -- "Explain recursion in one sentence."`
 
-Set `OPENROUTER_MODEL` to use another model slug from <https://openrouter.ai/models> (default: `anthropic/claude-opus-5.5`).
+Set `OPENROUTER_MODEL` to use another model slug from <https://openrouter.ai/models> (default: `anthropic/claude-opus-5.5`). `OPENROUTER_MAX_TOKENS` caps the reply length (default: 2000) so small credit balances can afford a request.
